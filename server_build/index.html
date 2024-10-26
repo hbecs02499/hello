@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Build Server</title>
+</head>
+<body>
+    <h1>C Build Server</h1>
+    <h2>Register a New Project</h2>
+    <form action="/register" method="post">
+        <input type="text" name="project_name" placeholder="Project Name" required>
+        <input type="text" name="repo_url" placeholder="Git Repository URL" required>
+        <button type="submit">Register</button>
+    </form>
+    <h2>Project Status</h2>
+    <ul>
+        {% for name, info in projects.items() %}
+            <li>{{ name }}: {{ info.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
